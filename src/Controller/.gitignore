@@ -1,0 +1,18 @@
+# Symfony / PHP
+/vendor/
+/var/
+
+# Cache & logs
+var/cache/
+var/log/
+
+# Env files
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+.vscode/
+
+# Composer
+composer.lock
