@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV - Mehdi MOUMITE{% endblock %}
+
+{% block body %}
+<!-- Page Header -->
+<section class="bg-success text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">
+            <i class="bi bi-file-earmark-person"></i> Curriculum Vitae
+        </h1>
+        <p class="lead">Mehdi MOUMITE</p>
+    </div>
+</section>
+
+<!-- CV Content -->
+<section class="py-5">
+    <div class="container">
+        <!-- Informations Personnelles -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0"><i class="bi bi-person-badge"></i> Informations Personnelles</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong><i class="bi bi-person"></i> Nom :</strong> MOUMITE Mehdi</p>
+                        <p><strong><i class="bi bi-envelope"></i> Email :</strong> mehdi.moumite@exemple.fr</p>
+                        <p><strong><i class="bi bi-telephone"></i> Téléphone :</strong> 06 XX XX XX XX</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong><i class="bi bi-geo-alt"></i> Adresse :</strong> Besançon, France</p>
+                        <p><strong><i class="bi bi-car-front"></i> Permis :</strong> Permis B (ou en cours)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formations -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="bi bi-mortarboard"></i> Formations</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3 border-bottom pb-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="text-primary">BUT Réseaux & Télécommunications</h5>
+                            <p class="mb-1"><strong>IUT de Roanne</strong></p>
+                            <p class="mb-0 text-muted">Parcours Cybersécurité</p>
+                        </div>
+                        <span class="badge bg-primary">2024 - 2027</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="text-primary">Baccalauréat</h5>
+                            <p class="mb-1"><strong>Lycée [Ton Lycée]</strong></p>
+                            <p class="mb-0 text-muted">Spécialités : [Tes spécialités]. Mention [Ta mention].</p>
+                        </div>
+                        <span class="badge bg-primary">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expériences Professionnelles -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0"><i class="bi bi-briefcase"></i> Expériences Professionnelles</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="text-info">Stage / Job étudiant</h5>
+                            <p class="mb-1"><strong>[Nom de l'entreprise]</strong></p>
+                            <p class="mb-0">[Description de ton expérience]</p>
+                        </div>
+                        <span class="badge bg-info">[Dates]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compétences Techniques -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0"><i class="bi bi-gear"></i> Compétences Techniques</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5 class="text-warning"><i class="bi bi-check-circle"></i> Réseaux</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-chevron-right text-warning"></i> Configuration routeurs/switchs</li>
+                            <li><i class="bi bi-chevron-right text-warning"></i> Protocoles TCP/IP</li>
+                            <li><i class="bi bi-chevron-right text-warning"></i> VLAN</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5 class="text-warning"><i class="bi bi-check-circle"></i> Systèmes</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-chevron-right text-warning"></i> Linux</li>
+                            <li><i class="bi bi-chevron-right text-warning"></i> Windows</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5 class="text-warning"><i class="bi bi-check-circle"></i> Développement</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-chevron-right text-warning"></i> HTML/CSS</li>
+                            <li><i class="bi bi-chevron-right text-warning"></i> PHP/Symfony</li>
+                            <li><i class="bi bi-chevron-right text-warning"></i> Python</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="text-center">
+            <a href="{{ path('app_download_cv') }}" class="btn btn-success btn-lg">
+                <i class="bi bi-download"></i> Télécharger ce CV en PDF
+            </a>
+            <a href="{{ path('app_portfolio') }}" class="btn btn-outline-primary btn-lg">
+                <i class="bi bi-briefcase"></i> Voir mon Portfolio
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

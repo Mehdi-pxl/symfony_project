@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CV - Mehdi MOUMITE</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 11pt; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 20px; border-bottom: 2px solid #ecf0f1; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .demandeur-info { background-color: #ecf0f1; padding: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="demandeur-info">
+        <strong>CV téléchargé par :</strong> {{ demandeur.prenom }} {{ demandeur.nom }} ({{ demandeur.entreprise }}) - {{ demandeur.email }}
+    </div>
+
+    <div class="header">
+        <h1>Mehdi MOUMITE</h1>
+        <p>mehdi.moumite@exemple.fr | 06 XX XX XX XX | Besançon</p>
+    </div>
+
+    <h2>FORMATIONS</h2>
+    <p><strong>BUT Réseaux & Télécommunications</strong> - IUT Besançon-Vesoul (2024-2027)</p>
+    
+    <h2>COMPÉTENCES</h2>
+    <p><strong>Réseaux :</strong> TCP/IP, VLAN, Configuration routeurs</p>
+    <p><strong>Développement :</strong> HTML/CSS, PHP/Symfony, Python</p>
+</body>
+</html>

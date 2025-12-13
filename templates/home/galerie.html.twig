@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery - My Hobbies{% endblock %}
+
+{% block body %}
+<!-- Page Header -->
+<section class="bg-primary text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">
+            <i class="bi bi-images"></i> My Hobbies & Passions
+        </h1>
+        <p class="lead">Discover what I love to do in my free time</p>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Hobby 1 : Photography -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ asset('images/photo1.jpg') }}" class="card-img-top" alt="Photography" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">
+                            <i class="bi bi-heart-fill"></i> Photography
+                        </h5>
+                        <p class="card-text">
+                            Capturing moments through my lens. I love landscape and street photography.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobby 2 : Gaming -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ asset('images/photo2.jpg') }}" class="card-img-top" alt="Gaming" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">
+                            <i class="bi bi-heart-fill"></i> Gaming
+                        </h5>
+                        <p class="card-text">
+                            Strategy games enthusiast. I enjoy competitive multiplayer games.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobby 3 : Music -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ asset('images/photo3.jpg') }}" class="card-img-top" alt="Music" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">
+                            <i class="bi bi-heart-fill"></i> Music
+                        </h5>
+                        <p class="card-text">
+                            Playing guitar for 5 years. I love rock and electronic music.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobby 4 : Sports -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ asset('images/photo4.jpg') }}" class="card-img-top" alt="Sports" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">
+                            <i class="bi bi-heart-fill"></i> Sports
+                        </h5>
+                        <p class="card-text">
+                            Basketball player and running enthusiast. Staying active is important to me.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quote Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="text-center">
+            <blockquote class="blockquote">
+                <p class="fs-4 fst-italic">"Life is about balance - work hard, play harder!"</p>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<!-- Back to Home -->
+<section class="py-4">
+    <div class="container text-center">
+        <a href="{{ path('app_home') }}" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+    </div>
+</section>
+{% endblock %}

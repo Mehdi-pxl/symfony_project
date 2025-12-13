@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% block title %}Home - Mehdi Moumite{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="display-3 fw-bold">Moumite Mehdi</h1>
+                <p class="lead mb-2">B1 - Networks & Telecommunications Student</p>
+                <p class="fs-4 mb-4 fst-italic">"Passionate about networks and cybersecurity"</p>
+                <p class="mb-4">
+                    First-year student in Networks & Telecommunications at IUT. 
+                    Eager to learn and grow in the field of IT infrastructure and network security.
+                </p>
+                <div class="mt-4">
+                    <a href="{{ path('app_cv') }}" class="btn btn-warning btn-lg me-2">
+                        <i class="bi bi-file-text"></i> View my CV
+                    </a>
+                    <a href="{{ path('app_portfolio') }}" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-briefcase"></i> My Portfolio
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{{ asset('images/profile.jpg') }}" alt="Mehdi Moumite" class="img-fluid rounded-circle shadow-lg" style="max-width: 300px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Learn More Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Learn More About Me</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-images text-primary" style="font-size: 4rem;"></i>
+                        <h5 class="card-title mt-3">My Hobbies</h5>
+                        <p class="card-text">Discover my passions and interests through photos and descriptions.</p>
+                        <a href="{{ path('app_galerie') }}" class="btn btn-primary">
+                            <i class="bi bi-arrow-right"></i> View Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-person text-success" style="font-size: 4rem;"></i>
+                        <h5 class="card-title mt-3">My Resume</h5>
+                        <p class="card-text">Education, professional experience, and technical skills.</p>
+                        <a href="{{ path('app_cv') }}" class="btn btn-success">
+                            <i class="bi bi-arrow-right"></i> View CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-trophy text-warning" style="font-size: 4rem;"></i>
+                        <h5 class="card-title mt-3">My Skills</h5>
+                        <p class="card-text">Projects, assignments, and evidence of my competencies.</p>
+                        <a href="{{ path('app_portfolio') }}" class="btn btn-warning">
+                            <i class="bi bi-arrow-right"></i> View Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-primary text-white py-5 mt-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Interested in my profile?</h2>
+        <p class="lead mb-4">Download my CV in PDF format</p>
+        <a href="{{ path('app_download_cv') }}" class="btn btn-warning btn-lg">
+            <i class="bi bi-download"></i> Download CV
+        </a>
+    </div>
+</section>
+{% endblock %}
