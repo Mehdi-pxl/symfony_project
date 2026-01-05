@@ -26,14 +26,14 @@ final class DownloadController extends AbstractController
             return $this->generatePdf($data);
         }
 
-        return $this->render('download/form.html.twig', [
+        return $this->render('cv/form.html.twig', [
             'form' => $form->createView()
         ]);
     }
 
     private function generatePdf(array $data): Response
     {
-        $html = $this->renderView('download/pdf.html.twig', [
+        $html = $this->renderView('cv/pdf.html.twig', [
             'demandeur' => $data
         ]);
 

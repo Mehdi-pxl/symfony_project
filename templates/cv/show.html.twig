@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Curriculum Vitae</h1>
+        <p class="lead">Réseaux et Télécommunications</p>
+        <a href="{{ path('cv_download') }}" class="btn btn-primary btn-lg mt-3">Télécharger le CV (PDF)</a>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Formations</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h5>BUT Réseaux & Télécommunications</h5>
+                        <p class="text-muted">2025 - 2028 | IUT</p>
+                        <p>Formation spécialisée en administration réseau, cybersécurité, et télécommunications.</p>
+                    </div>
+                    <div>
+                        <h5>Baccalauréat Général</h5>
+                        <p class="text-muted">2025 | Lycée</p>
+                        <p>Spécialités: Mathématiques, NSI (Numérique et Sciences Informatiques)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Expériences Professionnelles</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h5>Stage Technicien Réseau</h5>
+                        <p class="text-muted">Été 2025 | Entreprise XYZ</p>
+                        <p>Configuration de switches, maintenance du parc informatique, assistance utilisateurs.</p>
+                    </div>
+                    <div>
+                        <h5>Projets Académiques</h5>
+                        <p class="text-muted">2025 - Présent</p>
+                        <p>Réalisation de projets en équipe: configuration de serveurs, mise en place de VLANs, développement web.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Compétences</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Techniques</h5>
+                            <ul>
+                                <li>Configuration réseau (Cisco, routage, switching)</li>
+                                <li>Administration Linux/Windows Server</li>
+                                <li>Virtualisation (VMware, VirtualBox)</li>
+                                <li>Protocoles TCP/IP, DNS, DHCP</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Développement</h5>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>PHP, Symfony</li>
+                                <li>Python (scripting)</li>
+                                <li>Git, GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

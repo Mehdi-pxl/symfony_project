@@ -1,10 +1,30 @@
 import './stimulus_bootstrap.js';
-/*
- * Welcome to your app's main JavaScript file!
- *
- * This file will be included onto the page via the importmap() Twig function,
- * which should already be in your base.html.twig.
- */
 import './styles/app.css';
+import 'bootstrap';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+document.addEventListener('DOMContentLoaded', function () {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    if (!darkModeToggle) {
+        console.error('Dark mode button not found');
+        return;
+    }
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark');
+        darkModeToggle.innerHTML = '<i class="bi bi-sun-fill me-1"></i><span class="dark-mode-text">Clair</span>';
+    }
+
+    darkModeToggle.addEventListener('click', function () {
+        body.classList.toggle('dark');
+
+        if (body.classList.contains('dark')) {
+            localStorage.setItem('darkMode', 'enabled');
+            darkModeToggle.innerHTML = '<i class="bi bi-sun-fill me-1"></i><span class="dark-mode-text">Clair</span>';
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            darkModeToggle.innerHTML = '<i class="bi bi-moon-stars-fill me-1"></i><span class="dark-mode-text">Sombre</span>';
+        }
+    });
+});

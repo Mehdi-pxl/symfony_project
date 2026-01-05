@@ -62,18 +62,6 @@ class CvDownloadFormType extends AbstractType
                     ])
                 ]
             ])
-            ->add('entreprise', TextType::class, [
-                'label' => 'Entreprise',
-                'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Nom de votre entreprise'
-                ],
-                'constraints' => [
-                    new Assert\NotBlank([
-                        'message' => 'Veuillez saisir le nom de votre entreprise'
-                    ])
-                ]
-            ])
             ->add('telecharger', SubmitType::class, [
                 'label' => 'Télécharger le CV',
                 'attr' => [

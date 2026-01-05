@@ -1,3 +1,323 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+
+:root {
+    --color-primary: #2C3E50;
+    --color-secondary: #3498DB;
+    --color-accent: #E74C3C;
+    --color-success: #27AE60;
+    --color-portfolio: #2C3E50;
+    --color-light: #ECF0F1;
+    --color-dark: #1A252F;
+    --color-text: #2C3E50;
+}
+
 body {
-    background-color: skyblue;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F9FA;
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+.bg-light {
+    background-color: var(--color-light) !important;
+}
+
+.bg-warning {
+    background-color: var(--color-portfolio) !important;
+    color: white !important;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+    color: white !important;
+}
+
+.navbar-dark .navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-dark .nav-link:hover {
+    color: var(--color-secondary) !important;
+}
+
+.navbar-separator {
+    color: rgba(255, 255, 255, 0.3);
+    padding: 0 0.5rem;
+    user-select: none;
+}
+
+#darkModeToggle {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    transform: scale(1.05);
+}
+
+.dark-mode-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980B9;
+    border-color: #2980B9;
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-warning {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #C0392B;
+    border-color: #C0392B;
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn-success {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #229954;
+    border-color: #229954;
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+}
+
+.btn-outline-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-outline-light {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    transform: scale(1.08);
+}
+
+.btn-outline-secondary {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+}
+
+.btn-lg {
+    transition: all 0.3s ease;
+}
+
+.btn-lg:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #dee2e6;
+    background-color: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header.bg-primary {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+.card-header.bg-warning {
+    background-color: var(--color-portfolio) !important;
+    color: white !important;
+}
+
+footer {
+    background-color: var(--color-dark);
+    color: #aaa;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.portfolio-proof img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.text-primary {
+    color: var(--color-secondary) !important;
+}
+
+.text-success {
+    color: var(--color-success) !important;
+}
+
+.text-warning {
+    color: var(--color-accent) !important;
+}
+
+.text-dark {
+    color: white !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.badge.bg-dark {
+    background-color: var(--color-primary) !important;
+}
+
+.badge.bg-primary {
+    background-color: var(--color-secondary) !important;
+}
+
+.alert-info {
+    background-color: #D6EAF8;
+    border-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+body.dark {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark .navbar {
+    background-color: #0d0d0d !important;
+}
+
+body.dark .card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark .card-body {
+    color: #e0e0e0;
+}
+
+body.dark .card-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark .card-text {
+    color: #cccccc;
+}
+
+body.dark footer {
+    background-color: #0d0d0d;
+    color: #aaa;
+}
+
+body.dark .bg-light {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0;
+}
+
+body.dark .bg-primary {
+    background-color: #1e3a5f !important;
+}
+
+body.dark .bg-warning {
+    background-color: #3a3a3a !important;
+}
+
+body.dark .text-dark {
+    color: #e0e0e0 !important;
+}
+
+body.dark .text-muted {
+    color: #999 !important;
+}
+
+body.dark .border {
+    border-color: #444 !important;
+}
+
+body.dark .alert-info {
+    background-color: #1e3a5f;
+    border-color: #2980B9;
+    color: #e0e0e0;
+}
+
+body.dark .btn-primary {
+    background-color: #2980B9;
+    border-color: #2980B9;
+}
+
+body.dark .btn-primary:hover {
+    background-color: #3498DB;
+    border-color: #3498DB;
+}
+
+body.dark .btn-outline-primary {
+    color: #3498DB;
+    border-color: #3498DB;
+}
+
+body.dark .btn-outline-primary:hover {
+    background-color: #3498DB;
+    color: white;
+}
+
+body.dark .btn-outline-secondary {
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+body.dark .btn-outline-secondary:hover {
+    background-color: #666;
+    color: white;
+}
+
+body.dark blockquote {
+    color: #cccccc;
 }
