@@ -6,9 +6,9 @@ use App\Form\CvDownloadFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Routing\Attribute\Route;
-use Dompdf\Dompdf;
-use Dompdf\Options;
 
 final class DownloadController extends AbstractController
 {
@@ -19,11 +19,7 @@ final class DownloadController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
-            
-            $this->addFlash('success', 'Merci ' . $data['prenom'] . ' ! Votre CV va être téléchargé.');
-            
-            return $this->generatePdf($data);
+            return $this->downloadPdf();
         }
 
         return $this->render('cv/form.html.twig', [
@@ -31,28 +27,22 @@ final class DownloadController extends AbstractController
         ]);
     }
 
-    private function generatePdf(array $data): Response
+    private function downloadPdf(): Response
     {
-        $html = $this->renderView('cv/pdf.html.twig', [
-            'demandeur' => $data
-        ]);
+        $pdfPath = $this->getParameter('kernel.project_dir') . '/public/documents/CV_Mehdi_MOUMITE.pdf';
+        
+        if (!file_exists($pdfPath)) {
+            $this->addFlash('error', 'Le fichier CV n\'a pas été trouvé. Veuillez contacter l\'administrateur.');
+            return $this->redirectToRoute('app_download_cv');
+        }
 
-        $options = new Options();
-        $options->set('defaultFont', 'Arial');
-        $options->set('isRemoteEnabled', true);
+        $fileContent = file_get_contents($pdfPath);
+        
+        $response = new Response($fileContent);
+        $response->headers->set('Content-Type', 'application/pdf');
+        $response->headers->set('Content-Disposition', 'attachment; filename="CV_Mehdi_MOUMITE.pdf"');
+        $response->headers->set('Content-Length', filesize($pdfPath));
 
-        $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-
-        return new Response(
-            $dompdf->output(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'attachment; filename="CV_Mehdi_MOUMITE.pdf"'
-            ]
-        );
+        return $response;
     }
 }
